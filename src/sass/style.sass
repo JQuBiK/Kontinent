@@ -6,16 +6,19 @@
     position: relative
 
 .container
-    max-width: 1160px
+    max-width: 1200px
     margin: 0 auto
 
+.solid-line
+    margin-top: 47px
+    background: var(--e-1-e-1-e-1, #E1E1E1)
+
 .header
-    padding: 18px 0
+    padding: 14px 0
     width: 100%
     background-position: center
     background-repeat: no-repeat
     background-size: cover
-    height: 100%
     position: absolute
     top: 0
     left: 0
@@ -70,14 +73,138 @@
 
 
 .main
+    overflow: hidden
     .banner
         &-slider
             .slick-next,
             .slick-prev
                 position: absolute
-                bottom: 0
+                bottom: -40px
+                width: 25px
+                height: 16px
+                z-index: 10
+                border: none
+                outline: none
+                cursor: pointer
+                color: transparent
+            .slick-next
+                background: url('../icons/arrow_next.svg') center center/cover no-repeat
+                right: 3.1%
+            .slick-prev
+                background: url('../icons/arrow_prev.svg') center center/cover no-repeat
+                right: 7.5%
             &-item
                 width: 100%
             &-img
                 width: 100%
-                
+            
+    .banner-info
+        padding: 39px 0 0 0
+        &-wrapper
+            display: flex
+            align-items: start
+        &-title
+            margin-right: 60px
+            h1
+                color: var(--000000, #000)
+                font-size: 22px
+                font-style: normal
+                font-weight: 500
+                line-height: 110%
+                text-transform: uppercase
+                span
+                    color: var(--000000, #000)
+                    font-size: 80px
+                    font-style: normal
+                    font-weight: 700
+                    line-height: 110%
+                    margin-left: -4px
+                    text-transform: none
+
+        &-block
+            &-wrapper
+                display: flex
+                align-items: center
+                margin: 18px -11.5px 0 -11.5px
+            &-item
+                display: flex
+                align-items: center
+                padding: 0 11.5px
+                &-text
+                    color: var(--000000, #000)
+                    leading-trim: both
+                    text-edge: cap
+                    font-size: 18px
+                    font-style: normal
+                    font-weight: 600
+                    line-height: 150%
+                &-img
+                    margin-right: 10px
+        &-descr
+            color: var(--000000, #000)
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 160%
+            padding: 6px 0 0 4px
+    .price
+        padding: 48px 0 56px 0
+        h2
+            color: var(--000000, #000)
+            font-size: 32px
+            font-style: normal
+            font-weight: 700
+            line-height: 120%
+        &-wrapper
+            display: flex
+            margin: 20px -29.5px 0 -29.5px
+            &-icons
+                display: flex
+                align-items: center
+                margin: 57px -28px 0 -32px
+                .icons-item
+                    display: flex
+                    flex-direction: column
+                    align-items: start
+                    width: 20%
+                    padding: 0 28px
+        &-block-info
+            padding: 0 29.5px
+            &-item
+                padding: 18.5px 0 20.5px 0
+                border-bottom: 1px solid var(--e-1-e-1-e-1, #E1E1E1)
+                &:last-child
+                    border: none
+                &-title
+                    display: flex
+                    justify-content: space-between
+                    &-text
+                        color: var(--000000, #000)
+                        font-size: 20px
+                        font-style: normal
+                        font-weight: 500
+                        line-height: 160%
+                    &-price
+                        color: var(--000000, #000)
+                        text-align: right
+                        font-size: 20px
+                        font-style: normal
+                        font-weight: 600
+                        line-height: 160%
+                        span
+                            color: var(--colors-gold, #C7A462)
+                            font-size: 20px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 146.28%
+                &-descr
+                    color: var(--666666, #666)
+                    font-size: 16px
+                    font-style: normal
+                    font-weight: 400
+                    line-height: 180%
+                    margin-top: 16px
+        &-block-img
+            padding: 0 29.5px
+            img
+                margin-top: 28px
