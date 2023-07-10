@@ -6,20 +6,47 @@ $('.banner-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     responsive: [
-
+        {
+            breakpoint: 691,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+            }
+        }
     ]
 });
 
 $('.food-slider-banket').slick({
-  dots: false,
-  arrows: true,
-  infinite: false,
-  speed: 600,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  responsive: [
+    dots: false,
+    arrows: true,
+    infinite: false,
+    speed: 600,
+    variableWidth: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+        {
+            breakpoint: 1220,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }
+    ]
+});
 
-  ]
+$('.price-icons-slider').slick({
+    dots: false,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    speed: 600,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+        
+    ]
 });
 
 ymaps.ready(function () {
@@ -47,4 +74,33 @@ ymaps.ready(function () {
       });
 
   myMap.geoObjects.add(myPlacemark);
+});
+
+
+
+
+const menuBg = document.querySelector('.mobile-menu'),
+      menu = document.querySelector('.mobile-menu-wrapper'),
+      menuCloseBtn = document.querySelector('.mobile-menu-close'),
+      menuOpenBtn = document.querySelector('.mobile-navigation-btn');
+
+menuOpenBtn.addEventListener('click', (e) => {
+    menuBg.classList.add('open');
+    document.body.style.overflow = 'hidden';
+});
+menuCloseBtn.addEventListener('click', (e) => {
+    menuBg.classList.remove('open');
+    document.body.style.overflow = 'visible';
+});
+document.addEventListener('keydown', (e) => {
+    if (e.code === "Escape" && menuBg.classList.contains('open')) { 
+        menuBg.classList.remove('open');
+        document.body.style.overflow = 'visible';
+    }
+});
+menuBg.addEventListener('click', (e) => {
+    if (e.target !== menu && menuBg.classList.contains('open')) {
+        menuBg.classList.remove('open');
+        document.body.style.overflow = 'visible';
+    }
 });
