@@ -1181,6 +1181,9 @@
   .main .food-slider-banket .slick-prev {
     right: 12%;
   }
+  .main .food-slider-banket.new-page .slick-prev {
+    right: 10%;
+  }
   .main .price .price-icons-slider {
     display: block;
     margin: 32px -12px 0 -12px;
