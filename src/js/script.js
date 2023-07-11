@@ -32,6 +32,14 @@ $('.food-slider-banket').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
             }
+        },
+        {
+            breakpoint: 691,
+            settings: {
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
         }
     ]
 });
@@ -82,11 +90,18 @@ ymaps.ready(function () {
 const menuBg = document.querySelector('.mobile-menu'),
       menu = document.querySelector('.mobile-menu-wrapper'),
       menuCloseBtn = document.querySelector('.mobile-menu-close'),
+      menuList = document.querySelector('.mobile-menu-list'),
+      menuHeader = document.querySelector('.mobile-menu-header'),
+      menuHeaderClose = document.querySelector('.mobile-menu-header-close'),
       menuOpenBtn = document.querySelector('.mobile-navigation-btn');
 
 menuOpenBtn.addEventListener('click', (e) => {
     menuBg.classList.add('open');
     document.body.style.overflow = 'hidden';
+});
+menuHeaderClose.addEventListener('click', (e) => {
+    menuBg.classList.remove('open');
+    document.body.style.overflow = 'visible';
 });
 menuCloseBtn.addEventListener('click', (e) => {
     menuBg.classList.remove('open');
@@ -99,7 +114,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 menuBg.addEventListener('click', (e) => {
-    if (e.target !== menu && menuBg.classList.contains('open')) {
+    if (e.target !== menu && e.target !== menuList && e.target !== menuHeader && menuBg.classList.contains('open')) {
         menuBg.classList.remove('open');
         document.body.style.overflow = 'visible';
     }
